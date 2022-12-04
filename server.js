@@ -1,11 +1,12 @@
-const http  = require('http');
+import { createServer } from 'http';
+import { mainContent } from './content.js';
+
 const port = 3005;
 
-http.createServer((req, res) => {
+createServer((req, res) => {
 	res.writeHead(200, { 'Content-Type': 'text-plain' });
-	res.write('info site');
+	res.write(mainContent);
 	res.end();
 }).listen(port);
-
 
 console.log(`listening on http://localhost:${port}`);
